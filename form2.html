@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Food & Travel Recommendation</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f5f7fb;
+display:flex;
+justify-content:center;
+padding:40px;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:600px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+label{
+font-weight:bold;
+display:block;
+margin-top:15px;
+}
+
+input, textarea, select{
+width:100%;
+padding:10px;
+margin-top:5px;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+textarea{
+resize:vertical;
+height:80px;
+}
+
+.radio-group{
+margin-top:8px;
+}
+
+.radio-group input{
+width:auto;
+margin-right:5px;
+}
+
+.hidden{
+display:none;
+}
+
+button{
+width:100%;
+background:#4a6cf7;
+color:white;
+border:none;
+padding:12px;
+border-radius:6px;
+font-size:16px;
+margin-top:20px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3451d1;
+}
+
+</style>
+
+<script>
+
+function statusChange(){
+
+let status=document.querySelector('input[name="status"]:checked').value;
+
+document.getElementById("major").classList.add("hidden");
+document.getElementById("profession").classList.add("hidden");
+document.getElementById("retired").classList.add("hidden");
+
+if(status==="student"){
+document.getElementById("major").classList.remove("hidden");
+}
+
+if(status==="working"){
+document.getElementById("profession").classList.remove("hidden");
+}
+
+if(status==="retired"){
+document.getElementById("retired").classList.remove("hidden");
+}
+
+}
+
+function toggleEmail(show){
+document.getElementById("emailField").style.display=show?"block":"none";
+}
+
+function toggleInsta(show){
+document.getElementById("instaField").style.display=show?"block":"none";
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Food & Travel Recommendation Form</h2>
+
+<form>
+
+<label>Name</label>
+<input type="text" placeholder="Your name">
+
+<label>Country</label>
+<input type="text" placeholder="Your country">
+
+<label>City / Place</label>
+<input type="text" placeholder="Your city">
+
+<label>Favorite Food</label>
+<input type="text">
+
+<label>Hidden Tourist Place</label>
+<textarea placeholder="A place tourists usually don't visit"></textarea>
+
+<label>Food You Recommend</label>
+<textarea></textarea>
+
+<label>Recommendation For Me</label>
+<textarea></textarea>
+
+<label>Preferred Destination</label>
+
+<div class="radio-group">
+<input type="radio" name="travel"> Mountain
+<input type="radio" name="travel"> Beach
+<input type="radio" name="travel"> Both
+<input type="radio" name="travel"> Neither
+</div>
+
+<label>Current Status</label>
+
+<div class="radio-group">
+<input type="radio" name="status" value="student" onclick="statusChange()"> School Student
+<br>
+<input type="radio" name="status" value="student" onclick="statusChange()"> University Student
+<br>
+<input type="radio" name="status" value="working" onclick="statusChange()"> Working
+<br>
+<input type="radio" name="status" value="retired" onclick="statusChange()"> Retired
+</div>
+
+<div id="major" class="hidden">
+
+<label>Major</label>
+
+<select>
+<option>Science</option>
+<option>Commerce / Business</option>
+<option>Arts / Humanities</option>
+<option>Engineering</option>
+<option>Medical</option>
+<option>Other</option>
+</select>
+
+</div>
+
+<div id="profession" class="hidden">
+
+<label>Profession</label>
+
+<select>
+<option>Teacher</option>
+<option>Engineer</option>
+<option>Business</option>
+<option>Government Job</option>
+<option>Private Job</option>
+<option>Other</option>
+</select>
+
+</div>
+
+<div id="retired" class="hidden">
+
+<label>Retired Information</label>
+<textarea placeholder="Previous profession or current activities"></textarea>
+
+</div>
+
+<label>Email Address</label>
+
+<div class="radio-group">
+<input type="radio" name="email" onclick="toggleEmail(true)"> Provided
+<input type="radio" name="email" onclick="toggleEmail(false)"> Not Provided
+</div>
+
+<div id="emailField" style="display:none;">
+<input type="email" placeholder="Enter email">
+</div>
+
+<label>Instagram ID</label>
+
+<div class="radio-group">
+<input type="radio" name="insta" onclick="toggleInsta(true)"> Provided
+<input type="radio" name="insta" onclick="toggleInsta(false)"> Not Provided
+</div>
+
+<div id="instaField" style="display:none;">
+<input type="text" placeholder="Enter Instagram ID">
+</div>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
