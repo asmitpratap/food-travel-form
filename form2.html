@@ -120,108 +120,83 @@ document.getElementById("instaField").style.display=show?"block":"none";
 
 <h2>Food & Travel Recommendation Form</h2>
 
-<form>
+<form action="https://script.google.com/macros/s/AKfycbzquMCi9UiyMqbPv9TpSXkV3nr89jw6492PhEGiV0Epj1nI-TeXxgRhael3iMD25v0B/exec" method="POST">
 
 <label>Name</label>
-<input type="text" placeholder="Your name">
+<input type="text" name="name" placeholder="Your name">
 
 <label>Country</label>
-<input type="text" placeholder="Your country">
+<input type="text" name="country" placeholder="Your country">
 
 <label>City / Place</label>
-<input type="text" placeholder="Your city">
+<input type="text" name="city" placeholder="Your city">
 
 <label>Favorite Food</label>
-<input type="text">
+<input type="text" name="food" placeholder="Your favorite food">
 
-<label>Hidden Tourist Place</label>
-<textarea placeholder="A place tourists usually don't visit"></textarea>
+<label>Hidden place tourists usually don’t visit</label>
+<textarea name="hidden_place" placeholder="A place tourists usually don't visit"></textarea>
 
-<label>Food You Recommend</label>
-<textarea></textarea>
+<label>Food you recommend me to try</label>
+<textarea name="recommend_food"></textarea>
 
-<label>Recommendation For Me</label>
-<textarea></textarea>
+<label>Recommendation for me</label>
+<textarea name="recommendation"></textarea>
 
 <label>Preferred Destination</label>
-
-<div class="radio-group">
-<input type="radio" name="travel"> Mountain
-<input type="radio" name="travel"> Beach
-<input type="radio" name="travel"> Both
-<input type="radio" name="travel"> Neither
+<div>
+<input type="radio" name="destination" value="Mountain"> Mountain
+<input type="radio" name="destination" value="Beach"> Beach
+<input type="radio" name="destination" value="Both"> Both
+<input type="radio" name="destination" value="Neither"> Neither
 </div>
 
 <label>Current Status</label>
-
-<div class="radio-group">
-<input type="radio" name="status" value="student" onclick="statusChange()"> School Student
-<br>
-<input type="radio" name="status" value="student" onclick="statusChange()"> University Student
-<br>
-<input type="radio" name="status" value="working" onclick="statusChange()"> Working
-<br>
-<input type="radio" name="status" value="retired" onclick="statusChange()"> Retired
+<div>
+<input type="radio" name="status" value="school_student"> School Student
+<input type="radio" name="status" value="university_student"> University Student
+<input type="radio" name="status" value="working"> Working
+<input type="radio" name="status" value="retired"> Retired
 </div>
 
-<div id="major" class="hidden">
-
-<label>Major</label>
-
-<select>
-<option>Science</option>
-<option>Commerce / Business</option>
-<option>Arts / Humanities</option>
-<option>Engineering</option>
-<option>Medical</option>
-<option>Other</option>
+<label>Major (if student)</label>
+<select name="major">
+<option value="">Select major</option>
+<option value="Science">Science</option>
+<option value="Commerce">Commerce / Business</option>
+<option value="Arts">Arts / Humanities</option>
+<option value="Engineering">Engineering</option>
+<option value="Medical">Medical</option>
+<option value="Other">Other</option>
 </select>
 
-</div>
-
-<div id="profession" class="hidden">
-
-<label>Profession</label>
-
-<select>
-<option>Teacher</option>
-<option>Engineer</option>
-<option>Business</option>
-<option>Government Job</option>
-<option>Private Job</option>
-<option>Other</option>
+<label>Profession (if working)</label>
+<select name="profession">
+<option value="">Select profession</option>
+<option value="Teacher">Teacher</option>
+<option value="Engineer">Engineer</option>
+<option value="Businessman">Businessman</option>
+<option value="Government Job">Government Job</option>
+<option value="Private Job">Private Job</option>
+<option value="Other">Other</option>
 </select>
 
-</div>
-
-<div id="retired" class="hidden">
-
-<label>Retired Information</label>
-<textarea placeholder="Previous profession or current activities"></textarea>
-
-</div>
+<label>If retired, previous profession or current activity</label>
+<textarea name="retired_info"></textarea>
 
 <label>Email Address</label>
-
-<div class="radio-group">
-<input type="radio" name="email" onclick="toggleEmail(true)"> Provided
-<input type="radio" name="email" onclick="toggleEmail(false)"> Not Provided
+<div>
+<input type="radio" name="email_status" value="Provided"> Provided
+<input type="radio" name="email_status" value="Not Provided"> Not Provided
 </div>
-
-<div id="emailField" style="display:none;">
-<input type="email" placeholder="Enter email">
-</div>
+<input type="email" name="email" placeholder="Enter email (if provided)">
 
 <label>Instagram ID</label>
-
-<div class="radio-group">
-<input type="radio" name="insta" onclick="toggleInsta(true)"> Provided
-<input type="radio" name="insta" onclick="toggleInsta(false)"> Not Provided
+<div>
+<input type="radio" name="instagram_status" value="Provided"> Provided
+<input type="radio" name="instagram_status" value="Not Provided"> Not Provided
 </div>
-
-<div id="instaField" style="display:none;">
-<input type="text" placeholder="Enter Instagram ID">
-</div>
+<input type="text" name="instagram" placeholder="Enter Instagram ID (if provided)">
 
 <button type="submit">Submit</button>
 
